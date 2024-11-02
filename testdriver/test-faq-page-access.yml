@@ -1,0 +1,57 @@
+version: 4.0.79
+steps:
+  - prompt: Click on the "FAQ" link in the footer.
+    commands:
+      - command: scroll-until-text
+        text: FAQ
+        direction: down
+      - command: hover-text
+        text: FAQ
+        description: FAQ link in the footer
+        action: click
+  - prompt: Assert that the FAQ page loads with questions and answers.
+    commands:
+      - command: assert
+        expect: Frequently Asked Questions page displays questions and answers
+  - prompt: Navigate through various FAQ sections.
+    commands:
+      - command: hover-text
+        text: Ranked System
+        description: FAQ section link
+        action: click
+      - command: wait
+        timeout: 2000
+      - command: hover-text
+        text: Store
+        description: FAQ section link
+        action: click
+      - command: wait
+        timeout: 2000
+      - command: hover-text
+        text: Payment methods
+        description: FAQ section link
+        action: click
+      - command: wait
+        timeout: 2000
+      - command: hover-text
+        text: Technical Issues
+        description: FAQ section link
+        action: click
+      - command: wait
+        timeout: 2000
+      - command: hover-text
+        text: Contact
+        description: FAQ section link
+        action: click
+  - prompt: >-
+      Assert that content is relevant and accessible.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: >-
+          Frequently Asked Questions page displays relevant and accessible
+          content
+      - command: hover-text
+        text: Ranked System
+        description: FAQ section link
+        action: click
