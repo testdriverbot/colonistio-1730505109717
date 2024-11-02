@@ -1,0 +1,64 @@
+version: 4.0.79
+steps:
+  - prompt: Click on the "Community" link in the footer.
+    commands:
+      - command: scroll-until-text
+        text: Community
+        direction: down
+      - command: hover-text
+        text: Community
+        description: link in the footer
+        action: click
+  - prompt: Assert that an interactive page or contact form is shown.
+    commands:
+      - command: assert
+        expect: interactive elements like Subscribe buttons are visible
+  - prompt: Complete any contact form or direct message options.
+    commands:
+      - command: scroll-until-text
+        text: Contact
+        direction: down
+      - command: hover-text
+        text: Contact
+        description: contact option in the community page
+        action: click
+      - command: type
+        text: Hello, I would like to connect with the community.
+      - command: hover-text
+        text: Send
+        description: send button in the contact form
+        action: click
+  - prompt: Complete any contact form or direct message options.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll-until-text
+        text: Contact
+        direction: down
+      - command: hover-text
+        text: Contact
+        description: contact option in the community page
+        action: click
+      - command: type
+        text: Hello, I would like to connect with the community.
+      - command: hover-text
+        text: Send
+        description: send button in the contact form
+        action: click
+  - prompt: Complete any contact form or direct message options.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll-until-text
+        text: Contact
+        direction: down
+      - command: hover-text
+        text: Contact
+        description: contact option in the community page
+        action: click
+      - command: type
+        text: Hello, I would like to connect with the community.
+      - command: hover-text
+        text: Send
+        description: send button in the contact form
+        action: click
