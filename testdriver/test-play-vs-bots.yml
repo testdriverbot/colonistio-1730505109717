@@ -1,0 +1,50 @@
+version: 4.0.79
+steps:
+  - prompt: Click the "Play vs Bots" button.
+    commands:
+      - command: hover-text
+        text: Play vs Bots
+        description: button to start a game against bots
+        action: click
+  - prompt: Assert that a bot game setup page loads.
+    commands:
+      - command: assert
+        expect: the game board is visible with player actions
+  - prompt: Complete the bot game initialization.
+    commands:
+      - command: hover-text
+        text: Play vs Bots
+        description: button to start a game against bots
+        action: click
+  - prompt: >-
+      Assert entry into a bot match.  # Use the content of the file from the
+      environment
+    commands:
+      - command: assert
+        expect: the game board and player actions are visible
+  - prompt: >-
+      Assert entry into a bot match.  # Use the content of the file from the
+      environment
+    commands:
+      - command: press-keys
+        keys:
+          - f5
+      - command: wait
+        timeout: 5000
+      - command: hover-text
+        text: Play vs Bots
+        description: button to start a game against bots
+        action: click
+  - prompt: >-
+      Assert entry into a bot match.  # Use the content of the file from the
+      environment
+    commands:
+      - command: press-keys
+        keys:
+          - f5
+      - command: wait
+        timeout: 5000
+      - command: hover-text
+        text: Play vs Bots
+        description: button to start a game against bots
+        action: click
