@@ -1,0 +1,35 @@
+version: 4.0.79
+steps:
+  - prompt: Click on the "Privacy" link in the footer.
+    commands:
+      - command: scroll-until-text
+        text: Privacy
+        direction: down
+      - command: hover-text
+        text: Privacy
+        description: link in the footer
+        action: click
+  - prompt: Assert that the privacy policy page loads successfully.
+    commands:
+      - command: assert
+        expect: Privacy Policy for Colonist is visible
+  - prompt: Review the document for completeness.
+    commands:
+      - command: scroll
+        direction: down
+      - command: scroll
+        direction: down
+      - command: scroll
+        direction: down
+      - command: scroll
+        direction: down
+  - prompt: Review the document for completeness.
+    commands:
+      - command: scroll-until-text
+        text: End of Privacy Policy
+        direction: down
+  - prompt: Review the document for completeness.
+    commands:
+      - command: scroll-until-text
+        text: Children's Information
+        direction: down
